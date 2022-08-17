@@ -1,0 +1,28 @@
+[
+ {
+  "InstFile" : "D:/Nano4KProjects/nano4k_hyperram/src/hyperram_test_top.v",
+  "InstLine" : 1,
+  "InstName" : "hyperram_test_top",
+  "ModuleFile" : "D:/Nano4KProjects/nano4k_hyperram/src/hyperram_test_top.v",
+  "ModuleLine" : 1,
+  "ModuleName" : "hyperram_test_top",
+  "SubInsts" : [
+   {
+    "InstFile" : "D:/Nano4KProjects/nano4k_hyperram/src/hyperram_test_top.v",
+    "InstLine" : 40,
+    "InstName" : "your_instance_name",
+    "ModuleFile" : "D:/Nano4KProjects/nano4k_hyperram/src/hyperram_memory_interface/hyperram_memory_interface.v",
+    "ModuleLine" : 1,
+    "ModuleName" : "HyperRAM_Memory_Interface_Top"
+   },
+   {
+    "InstFile" : "D:/Nano4KProjects/nano4k_hyperram/src/hyperram_test_top.v",
+    "InstLine" : 34,
+    "InstName" : "pll",
+    "ModuleFile" : "D:/Nano4KProjects/nano4k_hyperram/src/gowin_pllvr/gowin_pllvr.v",
+    "ModuleLine" : 9,
+    "ModuleName" : "Gowin_PLLVR"
+   }
+  ]
+ }
+]
