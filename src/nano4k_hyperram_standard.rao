@@ -1,10 +1,11 @@
-<?xml version="1" encoding="UTF-8"?>
+<?xml version="1"?>
 <GAO_CONFIG>
     <Version>3.0</Version>
     <Mode>Standard</Mode>
-    <AoCore index="0" sample_clock="userClock" trig_type="0" storage_depth="1024" window_num="1" capture_amount="1024" trigger_pos="0" module_name="hyperram_test_top" force_trigger_by_falling_edge="false">
+    <AoCore index="0" sample_clock="memoryClock" trig_type="0" storage_depth="256" window_num="1" capture_amount="64" trigger_pos="0" module_name="hyperram_test_top">
         <SignalList>
-            <Bus name="readReg[31:0]">
+            <Signal>readDataValid</Signal>
+            <Bus restorename="readReg[31:0]">
                 <Signal>readReg[31]</Signal>
                 <Signal>readReg[30]</Signal>
                 <Signal>readReg[29]</Signal>
@@ -42,8 +43,15 @@
         <Triggers>
             <Trigger index="0">
                 <SignalList>
-                    <Signal>commandEnable</Signal>
-                    <Signal>readDataValid</Signal>
+                    <Bus restorename="testStateCounter[6:0]">
+                        <Signal>testStateCounter[6]</Signal>
+                        <Signal>testStateCounter[5]</Signal>
+                        <Signal>testStateCounter[4]</Signal>
+                        <Signal>testStateCounter[3]</Signal>
+                        <Signal>testStateCounter[2]</Signal>
+                        <Signal>testStateCounter[1]</Signal>
+                        <Signal>testStateCounter[0]</Signal>
+                    </Bus>
                 </SignalList>
             </Trigger>
             <Trigger index="1"/>
@@ -63,7 +71,7 @@
             <Trigger index="15"/>
         </Triggers>
         <MatchUnits>
-            <MatchUnit index="0" enabled="1" match_type="0" counter_enable="0" counter_width="2" counter="2" countinuous="0" func="0" value0="01" value1="00" trigger="0"/>
+            <MatchUnit index="0" enabled="1" match_type="0" counter_enable="0" counter_width="2" counter="2" countinuous="0" func="0" value0="0110011" value1="0000000" trigger="0"/>
             <MatchUnit index="1" enabled="0" match_type="0" counter_enable="0" counter_width="2" counter="2" countinuous="0" func="0" value0="" value1=""/>
             <MatchUnit index="2" enabled="0" match_type="0" counter_enable="0" counter_width="2" counter="2" countinuous="0" func="0" value0="" value1=""/>
             <MatchUnit index="3" enabled="0" match_type="0" counter_enable="0" counter_width="2" counter="2" countinuous="0" func="0" value0="" value1=""/>
@@ -84,5 +92,4 @@
             <Expression>M0</Expression>
         </Expressions>
     </AoCore>
-    <GAO_ID>1110101000110100</GAO_ID>
 </GAO_CONFIG>

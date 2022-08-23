@@ -1,4 +1,5 @@
 module gw_gao(
+    readDataValid,
     \readReg[31] ,
     \readReg[30] ,
     \readReg[29] ,
@@ -31,15 +32,21 @@ module gw_gao(
     \readReg[2] ,
     \readReg[1] ,
     \readReg[0] ,
-    commandEnable,
-    readDataValid,
-    userClock,
+    \testStateCounter[6] ,
+    \testStateCounter[5] ,
+    \testStateCounter[4] ,
+    \testStateCounter[3] ,
+    \testStateCounter[2] ,
+    \testStateCounter[1] ,
+    \testStateCounter[0] ,
+    memoryClock,
     tms_pad_i,
     tck_pad_i,
     tdi_pad_i,
     tdo_pad_o
 );
 
+input readDataValid;
 input \readReg[31] ;
 input \readReg[30] ;
 input \readReg[29] ;
@@ -72,14 +79,20 @@ input \readReg[3] ;
 input \readReg[2] ;
 input \readReg[1] ;
 input \readReg[0] ;
-input commandEnable;
-input readDataValid;
-input userClock;
+input \testStateCounter[6] ;
+input \testStateCounter[5] ;
+input \testStateCounter[4] ;
+input \testStateCounter[3] ;
+input \testStateCounter[2] ;
+input \testStateCounter[1] ;
+input \testStateCounter[0] ;
+input memoryClock;
 input tms_pad_i;
 input tck_pad_i;
 input tdi_pad_i;
 output tdo_pad_o;
 
+wire readDataValid;
 wire \readReg[31] ;
 wire \readReg[30] ;
 wire \readReg[29] ;
@@ -112,9 +125,14 @@ wire \readReg[3] ;
 wire \readReg[2] ;
 wire \readReg[1] ;
 wire \readReg[0] ;
-wire commandEnable;
-wire readDataValid;
-wire userClock;
+wire \testStateCounter[6] ;
+wire \testStateCounter[5] ;
+wire \testStateCounter[4] ;
+wire \testStateCounter[3] ;
+wire \testStateCounter[2] ;
+wire \testStateCounter[1] ;
+wire \testStateCounter[0] ;
+wire memoryClock;
 wire tms_pad_i;
 wire tck_pad_i;
 wire tdi_pad_i;
@@ -188,9 +206,9 @@ gw_con_top  u_icon_top(
 
 ao_top_0  u_la0_top(
     .control(control0[9:0]),
-    .trig0_i({commandEnable,readDataValid}),
-    .data_i({\readReg[31] ,\readReg[30] ,\readReg[29] ,\readReg[28] ,\readReg[27] ,\readReg[26] ,\readReg[25] ,\readReg[24] ,\readReg[23] ,\readReg[22] ,\readReg[21] ,\readReg[20] ,\readReg[19] ,\readReg[18] ,\readReg[17] ,\readReg[16] ,\readReg[15] ,\readReg[14] ,\readReg[13] ,\readReg[12] ,\readReg[11] ,\readReg[10] ,\readReg[9] ,\readReg[8] ,\readReg[7] ,\readReg[6] ,\readReg[5] ,\readReg[4] ,\readReg[3] ,\readReg[2] ,\readReg[1] ,\readReg[0] }),
-    .clk_i(userClock)
+    .trig0_i({\testStateCounter[6] ,\testStateCounter[5] ,\testStateCounter[4] ,\testStateCounter[3] ,\testStateCounter[2] ,\testStateCounter[1] ,\testStateCounter[0] }),
+    .data_i({readDataValid,\readReg[31] ,\readReg[30] ,\readReg[29] ,\readReg[28] ,\readReg[27] ,\readReg[26] ,\readReg[25] ,\readReg[24] ,\readReg[23] ,\readReg[22] ,\readReg[21] ,\readReg[20] ,\readReg[19] ,\readReg[18] ,\readReg[17] ,\readReg[16] ,\readReg[15] ,\readReg[14] ,\readReg[13] ,\readReg[12] ,\readReg[11] ,\readReg[10] ,\readReg[9] ,\readReg[8] ,\readReg[7] ,\readReg[6] ,\readReg[5] ,\readReg[4] ,\readReg[3] ,\readReg[2] ,\readReg[1] ,\readReg[0] }),
+    .clk_i(memoryClock)
 );
 
 endmodule

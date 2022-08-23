@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Module name="hyperram_test_top" Register="698" Alu="37" Lut="771">
+<Module name="hyperram_test_top" Register="698" Alu="37" Lut="773">
     <SubModule name="pll"/>
-    <SubModule name="gw_gao_inst_0" Register="349" Alu="10" Lut="367" Bsram="2"/>
+    <SubModule name="gw_gao_inst_0" Register="367" Alu="10" Lut="381" Bsram="1"/>
 </Module>

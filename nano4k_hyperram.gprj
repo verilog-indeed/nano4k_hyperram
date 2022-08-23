@@ -9,7 +9,7 @@
         <File path="src/hyperram_memory_interface/hyperram_memory_interface.v" type="file.verilog" enable="1"/>
         <File path="src/hyperram_test_top.v" type="file.verilog" enable="1"/>
         <File path="src/nano4k_hyperram.cst" type="file.cst" enable="1"/>
-        <File path="src/nano4k_hyperram_gao_test.rao" type="file.gao" enable="1"/>
         <File path="src/nano4k_hyperram_lite.rao" type="file.gao" enable="0"/>
+        <File path="src/nano4k_hyperram_standard.rao" type="file.gao" enable="1"/>
     </FileList>
 </Project>
